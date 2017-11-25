@@ -1,0 +1,10 @@
+---
+title: The Man Cave
+baseurl: /the_man_cave
+sass:
+  style: compressed
+plugins:
+- jekyll-autoprefixer
+- jekyll-paginate
+paginate: 6
+paginate_path: news-specials/page:num/

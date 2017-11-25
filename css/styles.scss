@@ -1,0 +1,346 @@
+---
+---
+
+@import "type";
+@import "utilities";
+@import "variables";
+
+*{
+  box-sizing: border-box;
+}
+html, body{
+  margin: 0;
+  padding: 0;
+}
+
+/*----------
+  resets
+----------*/
+
+
+.hero{
+  background-image: url("../assets/mobile-bg-pic.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 800px;
+  position: relative;
+
+}
+.logo{
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 171px;
+  left: 0;
+  right: 0;
+}
+.contact{
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.contact-info{
+  display: flex;
+  height: 135px;
+  border-top: 1px solid $secondary-primary;
+}
+.contact-info:nth-child(3){
+  margin-bottom: 0.5rem;
+}
+/*---------------
+  Hero
+---------------*/
+.store-pic{
+  background-image: url("../assets/mobile-store-pic.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 280px;
+  width: 100%;
+}
+.service{
+  text-align: center;
+}
+.service-pricing{
+  display: flex;
+ flex-direction: column;
+ padding:2rem 1.2rem;
+ width: 100%;
+}
+.service-pricing-info{
+ display: flex;
+ justify-content: space-between;
+ border-top: 1px dotted $secondary;
+ align-items: center;
+}
+
+/*---------------
+  Service
+---------------*/
+
+.appointment{
+  background: $primary;
+  width: 100%;
+  padding: 2.6rem 0;
+}
+.title-col{
+  text-align: center;
+  display: flex;
+}
+.title-col img{
+  width: 100px;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.2rem;
+  margin: auto;
+}
+input[type="text"] {
+    margin-bottom: 0.6rem;
+    padding: 0.7rem;
+}
+input[type="submit"] {
+    background: $secondary-primary;
+    border: none;
+    padding: 1.3rem 0;
+}
+input:nth-child(4) {
+   padding: 1rem 4rem 5rem 1rem;
+ }
+/*---------------
+  Form
+---------------*/
+
+#map {
+	height: 245px;
+}
+
+/*---------------
+  Map
+---------------*/
+.mobile{
+  display: block;
+}
+.desktop{
+  display: none;
+}
+footer{
+  background-color: $primary;
+  color: $light;
+  text-align: center;
+  padding: 1.5rem 0 1rem;
+}
+
+/*---------------
+  footer
+---------------*/
+
+@media only screen and (min-width: 375px) {
+
+}
+
+@media only screen and (min-width: 425px) {
+  .service-pricing{
+    padding:2rem 1.7rem;
+  }
+  form{
+    padding: 0 1.7rem;
+  }
+  input[type="text"]{
+    padding: 0.7rem;
+  }
+  input[type="submit"] {
+    padding: 1.5rem 0;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .logo{
+    top: 287px;
+    width: 330px;
+  }
+  .hero{
+    background-image: url("../assets/tablet-bg-pic.jpg");
+  }
+  .contact{
+    display: flex;
+  }
+  .contact-info{
+    flex: 1;
+  }
+  .contact-info:nth-child(1) > div{
+    width: 140px;
+  }
+  .contact-info:nth-child(2), .contact-info:nth-child(3){
+    border-left: 1px solid $secondary-primary;
+  }
+  .store-pic, .right-col{
+    height: 445px;
+    display: flex;
+  }
+  .store-pic{
+    flex: 1;
+    background-image: url("../assets/tablet-store-pic.jpg");
+  }
+  .right-col{
+    flex: 1;
+  }
+  .service{
+    display: flex;
+  }
+  .service-pricing{
+    max-width: 375px;
+    margin: auto;
+    padding: 0 1.7rem;
+  }
+  .contact-info:nth-child(3) {
+    margin-bottom: 0rem;
+ }
+ .title-col img {
+    width: 124px;
+}
+ input:nth-child(4) {
+    padding: 1rem 4rem 6rem 1rem;
+  }
+  .appointment{
+    padding: 4rem 0;
+  }
+  .mobile{
+    display: none;
+  }
+  .desktop{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .logo{
+    top: 85px;
+    left: 70px;
+    margin: 0;
+  }
+  .hero{
+    background-image: url("../assets/desktop-sm-bg-pic.jpg");
+    height: 625px;
+  }
+  .contact-info{
+    height: 150px
+  }
+  .store-pic{
+    flex: 1;
+    background-image: url("../assets/desktop-store-pic.jpg");
+  }
+  .service-pricing{
+    max-width: 500px;
+  }
+  .store-pic, .right-col{
+    height: 530px;
+  }
+  .appointment{
+    display: flex;
+    padding: 6rem 0;
+  }
+  .title-col{
+    flex: 1;
+  }
+  .form{
+    flex: 1.3;
+    display: flex;
+  }
+  form{
+    width: 690px;
+    margin: 0rem auto 0rem 0rem
+  }
+  .title-col img{
+    width: 100px;
+  }
+  input[type="submit"] {
+    padding: 1.6rem 0;
+  }
+  input[type="submit"] {
+    font-size: 1.2rem;
+  }
+  #map{
+  height: 330px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .logo{
+    left: 175px;
+    width: 385px;
+  }
+  .hero{
+    background-image: url("../assets/desktop-bg-pic.jpg");
+    height: 730px;
+  }
+  .contact-info{
+    height: 135px;
+  }
+  .contact-info:nth-child(1) > div{
+    width: 150px;
+  }
+  .service-pricing{
+    max-width: 570px;
+  }
+  .store-pic, .right-col{
+    height: 745px;
+  }
+  .service-pricing-info{
+    padding:0.4rem 0;
+  }
+  form{
+    width: 780px;
+  }
+  .title-col img{
+    width: 155px;
+  }
+  input[type="text"]{
+    padding: 1.1rem;
+  }
+  input:nth-child(4) {
+     padding: 1rem 4rem 6rem 1rem;
+   }
+   #map{
+   height: 430px;
+   }
+   input[type="text"] {
+       margin-bottom: 0.8rem;
+   }
+   .desktop{
+     display: flex;
+     justify-content: space-between;
+     padding: 1rem 5rem
+   }
+}
+@media only screen and (min-width: 1600px) {
+  .title-col img{
+    width: 175px;
+  }
+  input[type="text"]{
+    padding: 1.3rem;
+  }
+  input:nth-child(4) {
+     padding: 1rem 4rem 6rem 1rem;
+   }
+   input[type="text"] {
+       margin-bottom: 0.9rem;
+   }
+form{
+  width: 1000px;
+  }
+  #map{
+  height: 530px;
+  }
+  .desktop{
+    padding: 1rem 14rem
+  }
+}
