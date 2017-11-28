@@ -12,3 +12,29 @@ function initMap() {
 				title: 'Hello World!'
 			});
 		}
+
+
+		$(document).ready(function(){
+
+		    $('.first').waypoint(function() {
+		      $('.first').addClass('animated fadeInUp');
+		    }, {
+		      offset: '98%'
+		    });
+		    $('.second').waypoint(function() {
+		      $('.second').addClass('animated fadeInUp');
+		    }, {
+		      offset: '98%'
+		    });
+		    $('.third').waypoint(function() {
+		      $('.third').addClass('animated fadeInUp');
+		    }, {
+		      offset: '98%'
+		    });
+				$('.fourth').waypoint(function() {
+				 $('.fourth').addClass('animated fadeInUp');
+			 }, {
+				 offset: '98%'
+			 });
+
+		});

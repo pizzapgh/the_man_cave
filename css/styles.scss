@@ -1,29 +1,41 @@
 ---
 ---
 
+@import "animate";
 @import "type";
 @import "utilities";
 @import "variables";
 
-*{
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+  box-sizing: inherit;
+  transition: 300ms all ease-in-out;
 }
 html, body{
   margin: 0;
   padding: 0;
+  animation: fadeInEffect 2s;
+  transition: 300ms all ease-in-out;
 }
 
 /*----------
   resets
 ----------*/
 
+@keyframes fadeInEffect {
+  from{opacity:0;}
+  to{opacity: 1;}
+}
 
 .hero{
   background-image: url("../assets/mobile-bg-pic.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  height: 800px;
+  height: 820px;
   position: relative;
 
 }
@@ -44,13 +56,22 @@ html, body{
   right: 0;
   text-align: center;
 }
+.contact-info:nth-of-type(1) img{
+  width: 65px;
+}
+.contact-info:nth-of-type(2) img{
+  width: 55px;
+}
+.contact-info:nth-of-type(3) img{
+  width: 51px;
+}
 .contact-info{
   display: flex;
-  height: 135px;
+  height: 146px;
   border-top: 1px solid $secondary-primary;
 }
-.contact-info:nth-child(3){
-  margin-bottom: 0.5rem;
+.contact-info .center{
+      padding: 0 3.5rem;
 }
 /*---------------
   Hero
@@ -69,7 +90,6 @@ html, body{
   display: flex;
  flex-direction: column;
  padding:2rem 1.2rem;
- width: 100%;
 }
 .service-pricing-info{
  display: flex;
@@ -85,7 +105,10 @@ html, body{
 .appointment{
   background: $primary;
   width: 100%;
-  padding: 2.6rem 0;
+  padding: 1.5rem 0;
+}
+.container{
+  padding: 0 1.5rem;
 }
 .title-col{
   text-align: center;
@@ -97,7 +120,6 @@ html, body{
 form{
   display: flex;
   flex-direction: column;
-  padding: 0 1.2rem;
   margin: auto;
 }
 input[type="text"] {
@@ -108,9 +130,13 @@ input[type="submit"] {
     background: $secondary-primary;
     border: none;
     padding: 1.3rem 0;
+      transition: 300ms all ease-in-out;
 }
 input:nth-child(4) {
    padding: 1rem 4rem 5rem 1rem;
+ }
+ input[type="submit"]:hover{
+   background: $secondary;
  }
 /*---------------
   Form
@@ -148,9 +174,6 @@ footer{
   .service-pricing{
     padding:2rem 1.7rem;
   }
-  form{
-    padding: 0 1.7rem;
-  }
   input[type="text"]{
     padding: 0.7rem;
   }
@@ -158,6 +181,9 @@ footer{
     padding: 1.5rem 0;
     cursor: pointer;
   }
+  input:nth-child(4) {
+     padding: 1rem 4rem 5rem 1rem;
+   }
 }
 
 @media only screen and (min-width: 768px) {
@@ -173,12 +199,17 @@ footer{
   }
   .contact-info{
     flex: 1;
+    display: flex;
+    border-top: none;
   }
-  .contact-info:nth-child(1) > div{
-    width: 140px;
-  }
-  .contact-info:nth-child(2), .contact-info:nth-child(3){
-    border-left: 1px solid $secondary-primary;
+.border-left:after{
+  content: "";
+  display: block;
+  width: 2px;
+  position: absolute;
+  border-left: 1px solid $secondary-primary;
+  top: 47px;
+  bottom: 39px;
   }
   .store-pic, .right-col{
     height: 445px;
@@ -208,21 +239,43 @@ footer{
  input:nth-child(4) {
     padding: 1rem 4rem 6rem 1rem;
   }
-  .appointment{
-    padding: 4rem 0;
+    .appointment{
+      padding: 2rem 0;
+    }
+  .container{
+    padding: 0 1.7rem;
   }
+
+  .contact-info .center{
+    margin: auto;
+    width: 219px;
+    height: 130px;
+    align-items: center;
+    display: flex;
+    padding: 0;
+  }
+  .contact-info:nth-of-type(1) img{
+    width: 50px;
+  }
+  .contact-info:nth-of-type(2) img{
+    width: 45px;
+  }
+  .contact-info:nth-of-type(3) img{
+    width: 40px;
+  }
+  .contact-info img {
+    margin-right: 1rem;
+ }
+}
+
+@media only screen and (min-width: 1024px) {
   .mobile{
     display: none;
   }
   .desktop{
     display: flex;
     justify-content: space-between;
-    padding: 1rem 3rem;
-    align-items: center;
   }
-}
-
-@media only screen and (min-width: 1024px) {
   .logo{
     top: 85px;
     left: 70px;
@@ -237,7 +290,15 @@ footer{
   }
   .store-pic{
     flex: 1;
-    background-image: url("../assets/desktop-store-pic.jpg");
+transition: all 0.3s ease-in-out;
+background-size: 110%;
+background-position: center;
+background-repeat: no-repeat;
+background-color: gray;
+position: relative;
+}
+.store-pic:hover {
+background-size: 100%;
   }
   .service-pricing{
     max-width: 500px;
@@ -246,8 +307,23 @@ footer{
     height: 530px;
   }
   .appointment{
+    padding: 2.5rem 0;
+  }
+  .container{
     display: flex;
-    padding: 6rem 0;
+    max-width: 1206px;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .container-footer{
+    display: flex;
+    max-width: 1206px;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 1rem;
   }
   .title-col{
     flex: 1;
@@ -258,7 +334,7 @@ footer{
   }
   form{
     width: 690px;
-    margin: 0rem auto 0rem 0rem
+    margin: 0rem auto 0rem 2rem;
   }
   .title-col img{
     width: 100px;
@@ -272,6 +348,17 @@ footer{
   #map{
   height: 330px;
   }
+  .contact-info .center{
+    display: flex;
+    align-items: center;
+    width: 250px;
+  }
+  .contact-info img{
+    margin-right: 1rem;
+  }
+  input:nth-child(4) {
+     padding: 1rem 4rem 10rem 1rem;
+   }
 }
 @media only screen and (min-width: 1440px) {
   .logo{
@@ -285,9 +372,6 @@ footer{
   .contact-info{
     height: 135px;
   }
-  .contact-info:nth-child(1) > div{
-    width: 150px;
-  }
   .service-pricing{
     max-width: 570px;
   }
@@ -299,6 +383,7 @@ footer{
   }
   form{
     width: 780px;
+    margin: 0rem auto 0rem 3rem;
   }
   .title-col img{
     width: 155px;
@@ -307,7 +392,7 @@ footer{
     padding: 1.1rem;
   }
   input:nth-child(4) {
-     padding: 1rem 4rem 6rem 1rem;
+     padding: 1rem 4rem 10rem 1rem;
    }
    #map{
    height: 430px;
@@ -318,8 +403,36 @@ footer{
    .desktop{
      display: flex;
      justify-content: space-between;
-     padding: 1rem 5rem
    }
+   .appointment{
+     padding: 6rem 0;
+   }
+   .container{
+     display: flex;
+     max-width: 1406px;
+     margin: auto;
+   }
+   .container-footer{
+     display: flex;
+     max-width: 1406px;
+     margin: auto;
+     justify-content: space-between;
+     align-items: center;
+     width: 100%;
+     padding: 0;
+   }
+   .contact-info:nth-of-type(1) img{
+     width: 80px;
+   }
+   .contact-info:nth-of-type(2) img{
+     width: 74px;
+   }
+   .contact-info:nth-of-type(3) img{
+     width: 64px;
+   }
+   .contact-info .center {
+    width: 281px;
+ }
 }
 @media only screen and (min-width: 1600px) {
   .title-col img{
@@ -329,7 +442,7 @@ footer{
     padding: 1.3rem;
   }
   input:nth-child(4) {
-     padding: 1rem 4rem 6rem 1rem;
+     padding: 1rem 4rem 10rem 1rem;
    }
    input[type="text"] {
        margin-bottom: 0.9rem;
@@ -341,6 +454,21 @@ form{
   height: 530px;
   }
   .desktop{
-    padding: 1rem 14rem
+  }
+  .container{
+    display: flex;
+    max-width: 1600px;
+    margin: auto;
+  }
+  .container-footer{
+    display: flex;
+    max-width: 1600px;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .appointment h2{
+    font-size: 2.5rem;
   }
 }

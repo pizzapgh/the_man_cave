@@ -47,6 +47,9 @@ li, p{
 .service{
   color: $primary;
 }
+.service p{
+  font-weight: 600;
+}
 .price{
   font-size: 1.1rem;
 }

@@ -2,15 +2,18 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>The Man Cave</title>
+    <title>{{site.title}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,700,900|Rasa:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,700,900|Rasa:700" rel="stylesheet">
   <link rel="stylesheet" href="{{ "/css/styles.css"  | prepend: site.baseurl }}">
+     <link rel="icon" href="{{ "/assets/favicon.png" | prepend: site.baseurl }}">
   </head>
   <body>
 
 {{content}}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
   <script src="{{"/js/script.js"  | prepend: site.baseurl }}"></script>
 <script async defer
 					src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIL5lgR-C3KFOsVlh7Yvax3G2zMiS4Qgw&callback=initMap"></script>
