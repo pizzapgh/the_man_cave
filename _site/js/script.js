@@ -2,8 +2,22 @@ function initMap() {
 			var myLatLng = {lat: 40.496685, lng: -80.057522};
 
 			var map = new google.maps.Map(document.getElementById('map'), {
-				zoom: 17,
-				center: myLatLng
+				zoom: 16,
+				center: myLatLng,
+				styles: [
+    {
+        "featureType": "all",
+        "elementType": "all",
+        "stylers": [
+            {
+                "saturation": -100
+            },
+            {
+                "gamma": 0.5
+            }
+        ]
+    }
+]
 			});
 
 			var marker = new google.maps.Marker({
